@@ -1,3 +1,38 @@
+# Davsk Standard Project Layout
+## Fork repository
+You may wish to fork this standard project layout to create a Hugo website to be deployed on AppEngine with limited active content using Go HTTP. This is a bare bones empty repo to provide you with the project directory structure that we are all familiar. When creating a new Hugo website, we usually place public and client's content in separate repositories.
+
+## Installation
+Install prerequisites first.
+
+### Win10 Notes
+#### Developers Mode.
+Developer mode must be enable for mklink to create symbolic links.
+* Press Start, search for develpers, setup enable Developers mode.
+
+#### Enable Long Filenames on Git if using Windows10
+``` bash
+   git config --global core.longpaths true
+```
+
+### Clone repository
+
+**Edit instructions for users cloning your repository to do maintenance.**
+
+In your `Documents/GitHub/Davsk/' folder, execute each line in Git Bash.
+
+``` bash
+    git clone git@github.com:Davsk/Project-Online.git
+    cd Project-Online
+    scripts/init-subs.sh
+```
+
+## Company specific layout decisions
+
+AppEngine Services are defined in their respective directorories in /cmd
+
+Hugo sites are defined in their respective directories in /website
+
 # Standard Go Project Layout
 
 This is a basic layout for Go application projects. It's not an official standard defined by the core Go dev team; however, it is a set of common historical and emerging project layout patterns in the Go ecosystem. Some of these patterns are more popular than others. It also has a number of small enhancements along with several supporting directories common to any large enough real world application.
