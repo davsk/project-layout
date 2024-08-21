@@ -2,13 +2,29 @@
 
 翻译:
 
-- [한국어 문서](README_ko.md)
+* [English](README.md)
+* [한국어 문서](README_ko.md)
+* [简体中文](README_zh.md)
+* [正體中文](README_zh-TW.md)
+* [简体中文](README_zh-CN.md) - ???
+* [Français](README_fr.md)
+* [日本語](README_ja.md)
+* [Portuguese](README_ptBR.md)
+* [Español](README_es.md)
+* [Română](README_ro.md)
+* [Русский](README_ru.md)
+* [Türkçe](README_tr.md)
+* [Italiano](README_it.md)
+* [Vietnamese](README_vi.md)
+* [Українська](README_ua.md)
+* [Indonesian](README_id.md)
+* [हिन्दी](README_hi.md)
 
-这是 Go 应用程序项目的基本布局。它不是核心 Go 开发团队定义的官方标准；然而，它是 Go 生态系统中一组常见的老项目和新项目的局模式。其中一些模式比其他模式更受欢迎。它还具有许多小的增强，以及对任何足够大的实际应用程序通用的几个支持目录。
+这是 Go 应用程序项目的基本布局。它不是核心 Go 开发团队定义的官方标准；然而，它是 Go 生态系统中一组常见的老项目和新项目的布局模式。其中一些模式比其他模式更受欢迎。它还具有许多小的增强，以及对任何足够大的实际应用程序通用的几个支持目录。
 
-如果你尝试学习 Go，或者你正在为自己建立一个 PoC 或一个玩具项目，这个项目布局是没啥必要的。从一些非常简单的事情开始(一个 `main.go` 文件绰绰有余)。随着项目的增长，请记住保持代码结构良好非常重要，否则你最终会得到一个凌乱的代码，这其中就包含大量隐藏的依赖项和全局状态。当有更多的人参与这个项目时，你将需要更多的结构。这时候，介绍一种管理包/库的通用方法是很重要的。当你有一个开源项目时，或者当你知道其他项目从你的项目存储库中导入代码时，这时候拥有私有(又名 `internal`)包和代码就很重要。克隆存储库，保留你需要的内容，删除其他所有的内容!仅仅因为它在那里并不意味着你必须全部使用它。这些模式都没有在每个项目中使用。甚至 `vendor` 模式也不是通用的。
+如果你尝试学习 Go，或者你正在为自己建立一个 PoC 或一个玩具项目，这个项目布局是没啥必要的。从一些非常简单的事情开始(一个 `main.go` 文件绰绰有余)。随着项目的增长，请记住保持代码结构良好非常重要，否则你最终会得到一个凌乱的代码，这其中就包含大量隐藏的依赖项和全局状态。当有更多的人参与这个项目时，你将需要更多的结构。这时候，介绍一种管理包/库的通用方法是很重要的。当你有一个开源项目时，或者当你知道其他项目从你的项目存储库中导入代码时，这时候拥有私有(又名 `internal`)包和代码就很重要。克隆存储库，保留你需要的内容，删除其他所有的内容！仅仅因为它在那里并不意味着你必须全部使用它。这些模式都没有在每个项目中使用。甚至 `vendor` 模式也不是通用的。
 
-Go 1.14 [`Go Modules`](https://github.com/golang/go/wiki/Modules) 终于可以投入生产了。除非你有特定的理由不使用它们，否则使用 [`Go Modules`](https://blog.golang.org/using-go-modules) 。如果你使用，就无需担心 $GOPATH 以及项目放置的位置。存储库中的 `go.mod` 文件基本假定你的项目托管在 Github 上，但这不是要求。模块路径可以是任何地方，尽管第一个模块路径组件的名称中应该有一个点（当前版本的 Go 不再强制使用该模块，但如果使用稍旧的版本，如果没有 `mod` 文件构建失败的话 ，不要惊讶）。如果你想知道更多信息，请参阅 Issues [`37554`](https://github.com/golang/go/issues/37554) 和 [`32819`](https://github.com/golang/go/issues/32819) 。
+Go 1.14 [`Go Modules`](https://go.dev/wiki/Modules) 终于可以投入生产了。除非你有特定的理由不使用它们，否则使用 [`Go Modules`](https://blog.golang.org/using-go-modules) 。如果你使用，就无需担心 $GOPATH 以及项目放置的位置。存储库中的 `go.mod` 文件基本假定你的项目托管在 Github 上，但这不是要求。模块路径可以是任何地方，尽管第一个模块路径组件的名称中应该有一个点（当前版本的 Go 不再强制使用该模块，但如果使用稍旧的版本，如果没有 `mod` 文件构建失败的话 ，不要惊讶）。如果你想知道更多信息，请参阅 Issues [`37554`](https://github.com/golang/go/issues/37554) 和 [`32819`](https://github.com/golang/go/issues/32819) 。
 
 此项目布局是通用的，并且不会尝试强加一个特定的 Go 包结构。
 
@@ -18,7 +34,7 @@ Go 1.14 [`Go Modules`](https://github.com/golang/go/wiki/Modules) 终于可以�
 * https://talks.golang.org/2014/names.slide
 * https://golang.org/doc/effective_go.html#names
 * https://blog.golang.org/package-names
-* https://github.com/golang/go/wiki/CodeReviewComments
+* https://go.dev/wiki/CodeReviewComments
 * [Style guideline for Go packages](https://rakyll.org/style-packages) (rakyll/JBD)
 
 参见 [`Go Project Layout`](https://medium.com/golang-learn/go-project-layout-e5213cdcfaa2) 了解更多的背景信息。
@@ -47,7 +63,7 @@ Go 1.14 [`Go Modules`](https://github.com/golang/go/wiki/Modules) 终于可以�
 
 私有应用程序和库代码。这是你不希望其他人在其应用程序或库中导入代码。请注意，这个布局模式是由 Go 编译器本身执行的。有关更多细节，请参阅Go 1.4 [`release notes`](https://golang.org/doc/go1.4#internalpackages) 。注意，你并不局限于顶级 `internal` 目录。在项目树的任何级别上都可以有多个内部目录。
 
-你可以选择向 internal 包中添加一些额外的结构，以分隔共享和非共享的内部代码。这不是必需的(特别是对于较小的项目)，但是最好有有可视化的线索来显示预期的包的用途。你的实际应用程序代码可以放在 `/internal/app` 目录下(例如 `/internal/app/myapp`)，这些应用程序共享的代码可以放在 `/internal/pkg` 目录下(例如 `/internal/pkg/myprivlib`)。
+你可以选择向 internal 包中添加一些额外的结构，以分隔共享和非共享的内部代码。这不是必需的(特别是对于较小的项目)，但是最好有可视化的线索来显示预期的包的用途。你的实际应用程序代码可以放在 `/internal/app` 目录下(例如 `/internal/app/myapp`)，这些应用程序共享的代码可以放在 `/internal/pkg` 目录下(例如 `/internal/pkg/myprivlib`)。
 
 ### `/pkg`
 
@@ -61,7 +77,7 @@ Go 1.14 [`Go Modules`](https://github.com/golang/go/wiki/Modules) 终于可以�
 
 ### `/vendor`
 
-应用程序依赖项(手动管理或使用你喜欢的依赖项管理工具，如新的内置 [`Go Modules`](https://github.com/golang/go/wiki/Modules) 功能)。`go mod vendor` 命令将为你创建 `/vendor` 目录。请注意，如果未使用默认情况下处于启用状态的 Go 1.14，则可能需要在 `go build` 命令中添加 `-mod=vendor` 标志。
+应用程序依赖项(手动管理或使用你喜欢的依赖项管理工具，如新的内置 [`Go Modules`](https://go.dev/wiki/Modules) 功能)。`go mod vendor` 命令将为你创建 `/vendor` 目录。请注意，如果未使用默认情况下处于启用状态的 Go 1.14，则可能需要在 `go build` 命令中添加 `-mod=vendor` 标志。
 
 如果你正在构建一个库，那么不要提交你的应用程序依赖项。
 
@@ -81,7 +97,7 @@ OpenAPI/Swagger 规范，JSON 模式文件，协议定义文件。
 
 ### `/web`
 
-特定于 Web 应用程序的组件:静态 Web 资产、服务器端模板和 SPAs。
+特定于 Web 应用程序的组件:静态 Web 资源、服务器端模板和 SPAs。
 
 
 ## 通用应用目录
@@ -101,7 +117,7 @@ System init（systemd，upstart，sysv）和 process manager/supervisor（runit�
 
 执行各种构建、安装、分析等操作的脚本。
 
-这些脚本保持了根级别的 Makefile 变得小而简单(例如， [`https://github.com/hashicorp/terraform/blob/master/Makefile`](https://github.com/hashicorp/terraform/blob/master/Makefile) )。
+这些脚本保持了根级别的 Makefile 变得小而简单(例如， [`https://github.com/hashicorp/terraform/blob/main/Makefile`](https://github.com/hashicorp/terraform/blob/main/Makefile) )。
 
 有关示例，请参见  [`/scripts`](scripts/README.md) 目录。
 
@@ -115,7 +131,7 @@ System init（systemd，upstart，sysv）和 process manager/supervisor（runit�
 
 ### `/deployments`
 
-IaaS、PaaS、系统和容器编配部署配置和模板(docker-compose、kubernetes/helm、mesos、terraform、bosh)。注意，在一些存储库中(特别是使用 kubernetes 部署的应用程序)，这个目录被称为 `/deploy`。
+IaaS、PaaS、系统和容器编排部署配置和模板(docker-compose、kubernetes/helm、mesos、terraform、bosh)。注意，在一些存储库中(特别是使用 kubernetes 部署的应用程序)，这个目录被称为 `/deploy`。
 
 ### `/test`
 
@@ -153,7 +169,7 @@ Git hooks。
 
 ### `/assets`
 
-与存储库一起使用的其他资产(图像、徽标等)。
+与存储库一起使用的其他资源(图像、徽标等)。
 
 ### `/website`
 
